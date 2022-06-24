@@ -7,6 +7,14 @@ public class SignupBean {
 	String email;
 	String gender;
 	String password;
+	int userId;
+	
+	public int getUserId() {
+		return userId;
+	}
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
 	public String getFirstName() {
 		return firstName;
 	}

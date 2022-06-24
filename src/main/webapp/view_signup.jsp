@@ -20,5 +20,7 @@
 	Email:<%=emailValue %><br>
 	Gender:<%=genderValue %><br>
 	Password:<%=passwordValue %>
+	
+	<a href="ListSignupUsersController">ListSignupUser</a>
 </body>
 </html>
