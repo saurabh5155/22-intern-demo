@@ -8,7 +8,13 @@ public class SignupBean {
 	String gender;
 	String password;
 	int userId;
-	
+	String userType;
+	public String getUserType() {
+		return userType;
+	}
+	public void setUserType(String userType) {
+		this.userType = userType;
+	}
 	public int getUserId() {
 		return userId;
 	}
@@ -45,5 +51,6 @@ public class SignupBean {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	
 	
 }

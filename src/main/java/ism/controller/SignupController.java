@@ -83,6 +83,7 @@ public class SignupController extends HttpServlet{
 			signupBean.setEmail(emailValue);
 			signupBean.setGender(genderValue);
 			signupBean.setPassword(passwordValue);
+			signupBean.setUserType("customer");
 			
 			signupDao.insertUsers(signupBean);
 			rd = request.getRequestDispatcher("view_signup.jsp");

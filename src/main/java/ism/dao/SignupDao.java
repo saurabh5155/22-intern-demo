@@ -19,16 +19,16 @@ public class SignupDao {
 	public void insertUsers(SignupBean signupBean) {
 
 		try {
-
 			Connection con = PgAdmin4Connection.getConnection();
 			
-			PreparedStatement ptmt = con.prepareStatement("insert into users (firstname,lastname,email,gender,password) values (?,?,?,?,?)");
+			PreparedStatement ptmt = con.prepareStatement("insert into users (firstname,lastname,email,gender,password,usertype) values (?,?,?,?,?,?)");
 			
 			ptmt.setString(1, signupBean.getFirstName());
 			ptmt.setString(2, signupBean.getLastName());
 			ptmt.setString(3, signupBean.getEmail());
 			ptmt.setString(4, signupBean.getGender());
 			ptmt.setString(5, signupBean.getPassword());
+			ptmt.setString(6, signupBean.getUserType());
 			
 			int records = ptmt.executeUpdate();
 			System.out.println("Data inserted"+records);
@@ -58,6 +58,7 @@ public class SignupDao {
 				String lastName = rs.getString("lastname");
 				String email = rs.getString("email");
 				String gender = rs.getString("gender");
+				String userType = rs.getString("usertype");
 				
 				SignupBean signupBean = new SignupBean();
 				
@@ -66,6 +67,7 @@ public class SignupDao {
 				signupBean.setLastName(lastName);
 				signupBean.setEmail(email);
 				signupBean.setGender(gender);
+				signupBean.setUserType(userType);
 				
 				signup.add(signupBean);
 			}
@@ -75,6 +77,47 @@ public class SignupDao {
 			System.out.println("Error in ListSignupUsers() in Dao");
 		}
 		return signup;
+		
+	}
+	
+	public SignupBean login(String email,String password) {
+		
+		
+		
+		SignupBean signupBean=null;
+		try {
+			Connection con = PgAdmin4Connection.getConnection();
+			PreparedStatement ptmt = con.prepareStatement("select * from users where email=? and password=?");
+			
+			ptmt.setString(1, email);
+			ptmt.setString(2, password);
+			
+			ResultSet rs = ptmt.executeQuery();
+			while(rs.next()) {
+				int userId = rs.getInt("userId");				
+				String emaildatabase = rs.getString("email");
+				String lastname = rs.getString("lastname");
+				String gender = rs.getString("gender");
+				String firstname = rs.getString("firstname");
+				String passworddatabse = rs.getString("password");
+				String userType = rs.getString("usertype");
+				 signupBean = new SignupBean();
+				
+				signupBean.setUserId(userId); 
+				signupBean.setFirstName(firstname);
+				signupBean.setLastName(lastname);
+				signupBean.setEmail(emaildatabase);
+				signupBean.setGender(gender);
+				signupBean.setPassword(passworddatabse);
+				signupBean.setUserType(userType);
+				
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return signupBean;
 		
 	}
 	
