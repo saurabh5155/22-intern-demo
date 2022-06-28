@@ -10,6 +10,9 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 import javax.security.auth.message.callback.SecretKeyCallback.Request;
 
+import org.apache.catalina.mbeans.MemoryUserDatabaseMBean;
+import org.eclipse.jdt.internal.compiler.flow.TryFlowContext;
+
 import ism.bean.SignupBean;
 import ism.util.PgAdmin4Connection;
 
@@ -118,7 +121,66 @@ public class SignupDao {
 			e.printStackTrace();
 		}
 		return signupBean;
-		
 	}
 	
+	public boolean deleteUser(int userid) {
+		boolean flag=false;
+		
+		try(Connection con = PgAdmin4Connection.getConnection();
+			PreparedStatement ptmt = con.prepareStatement("delete from users where userid = ?");
+				) {
+			ptmt.setInt(1, userid);
+			
+			int deleterow = ptmt.executeUpdate();
+			if (deleterow == 1) {
+				flag=true;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return flag;
+	}
+	
+	public SignupBean getSignupUserById(int userid) {
+		SignupBean signupBean= null;
+		try(Connection con = PgAdmin4Connection.getConnection();
+			PreparedStatement ptmt = con.prepareStatement("select * from users where userid=?");	
+				) {
+			ptmt.setInt(1, userid);
+			
+			ResultSet rs = ptmt.executeQuery();
+			while (rs.next()) { 
+				signupBean = new SignupBean();
+			signupBean.setUserId(rs.getInt("userid"));
+			signupBean.setFirstName(rs.getString("firstname"));
+			signupBean.setLastName(rs.getString("lastname"));
+			signupBean.setGender(rs.getString("gender"));
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return signupBean;
+	}
+	
+	public Boolean UpdateSignupUser(SignupBean signupBean) {
+		boolean flag =false;
+		try (Connection con = PgAdmin4Connection.getConnection();
+				PreparedStatement ptmt = con.prepareStatement("update users set firstname=?,lastname=?,gender=? where userid =?");
+				){	
+			ptmt.setString(1, signupBean.getFirstName());
+			ptmt.setString(2, signupBean.getLastName());
+			ptmt.setString(3, signupBean.getGender());
+			ptmt.setInt(4, signupBean.getUserId());
+			
+			int updateCount = ptmt.executeUpdate();
+			if(updateCount == 1) {
+				flag = true;
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+		return flag;
+	}
 }

@@ -5,8 +5,12 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<jsp:include page="Css.jsp"></jsp:include>
 </head>
 <body>
-Admin
+	<jsp:include page="Navbar.jsp"></jsp:include>
+	
+	
+	<jsp:include page="Js.jsp"></jsp:include>
 </body>
 </html>
