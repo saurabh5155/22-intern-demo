@@ -1,4 +1,4 @@
-package ism.controller;
+package ism.controller.signup;
 
 import java.io.IOException;
 
@@ -9,6 +9,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import javax.servlet.http.HttpSessionContext;
 
 import ism.bean.SignupBean;
 import ism.dao.SignupDao;
@@ -27,13 +29,14 @@ public class LoginController extends HttpServlet {
 		SignupDao signupDao = new SignupDao();
 		signupBean= signupDao.login(email,password);
 		
-		
 		RequestDispatcher rd = null;
 		
 		if(signupBean==null) {
 			request.setAttribute("errorMSG", "Invalid Email or Password");
 			rd = request.getRequestDispatcher("Login.jsp");
 		} else {
+			HttpSession session = request.getSession();
+			session.setAttribute("userId", signupBean.getUserId());
 			if(signupBean.getUserType().equals("customer")) {
 				System.out.println(signupBean.getUserType());
 				rd = request.getRequestDispatcher("CoustomerDashboard.jsp");

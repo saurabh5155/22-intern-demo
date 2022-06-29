@@ -1,4 +1,4 @@
-package ism.controller;
+package ism.controller.signup;
 import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;

@@ -5,8 +5,23 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<style type="text/css">
+	#row-margin-top{
+		margin-top: 20px;
+		background-color: #F8F8FF;
+	}
+	#login{
+		text-align: center;
+		font-size: 50px;
+	}
+	body{
+		background-color: #EBF4FA;
+	}
+</style>
+<jsp:include page="Css.jsp"></jsp:include>
 </head>
 <body>
+	<jsp:include page="AdminNavbar.jsp"></jsp:include>
 	<div class="container-fluid">
 	
 	<div class="row" >
@@ -32,13 +47,20 @@
 						Product Available Qty:<input type="number" class="form-control" name="productQty"/><br>
 					</div>
 					
+					<div class="form-group">
+						Product Img URL:<input type="text" class="form-control" name="productImg"/><br>
+					</div>
+					
 					<div>
 						<input type="submit" class="btn btn-primary"/>
 					</div>
 					${Success }
 				</form>
+				
+				<a href="ListProduct">product list?</a>
 		</div>
 	</div>
 </div>
+<jsp:include page="Js.jsp"></jsp:include>
 </body>
 </html>

@@ -9,4 +9,54 @@
     <welcome-file>default.jsp</welcome-file>
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>AddToCartController</display-name>
+    <servlet-name>AddToCartController</servlet-name>
+    <servlet-class>ism.controller.addToCart.AddToCartController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddToCartController</servlet-name>
+    <url-pattern>/AddToCartController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UpdateProducts</display-name>
+    <servlet-name>UpdateProducts</servlet-name>
+    <servlet-class>ism.controller.products.UpdateProducts</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdateProducts</servlet-name>
+    <url-pattern>/UpdateProducts</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UpdateProductController</display-name>
+    <servlet-name>UpdateProductController</servlet-name>
+    <servlet-class>ism.controller.products.UpdateProductController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdateProductController</servlet-name>
+    <url-pattern>/UpdateProductController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ListAddToCart</display-name>
+    <servlet-name>ListAddToCart</servlet-name>
+    <servlet-class>ism.controller.addToCart.ListAddToCart</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ListAddToCart</servlet-name>
+    <url-pattern>/ListAddToCart</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DeleteAddToCart</display-name>
+    <servlet-name>DeleteAddToCart</servlet-name>
+    <servlet-class>ism.controller.addToCart.DeleteAddToCart</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteAddToCart</servlet-name>
+    <url-pattern>/DeleteAddToCart</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -8,7 +8,7 @@
 <jsp:include page="Css.jsp"></jsp:include>
 </head>
 <body>
-	<jsp:include page="Navbar.jsp"></jsp:include>
+	<jsp:include page="AdminNavbar.jsp"></jsp:include>
 	
 	
 	<jsp:include page="Js.jsp"></jsp:include>

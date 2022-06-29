@@ -7,7 +7,14 @@ public class ProductBean {
 	String productDiscription;
 	int productPrice;
 	int productQty;
+	String productImg;
 	
+	public String getProductImg() {
+		return productImg;
+	}
+	public void setProductImg(String productImg) {
+		this.productImg = productImg;
+	}
 	public int getProductPrice() {
 		return productPrice;
 	}

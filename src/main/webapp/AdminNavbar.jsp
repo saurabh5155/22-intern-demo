@@ -20,10 +20,11 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="AddProduct.jsp">Add Products</a>
-          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="ListProduct">List Product</a>
           <a class="dropdown-item" href="#">Something else here</a>
         </div>
       </li>
     </ul>
   </div>
+   <a class="navbar-brand" href="Logout">Logout</a>
 </nav>

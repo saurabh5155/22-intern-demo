@@ -1,7 +1,6 @@
-package ism.controller;
+package ism.controller.signup;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -13,18 +12,23 @@ import javax.servlet.http.HttpServletResponse;
 import ism.bean.SignupBean;
 import ism.dao.SignupDao;
 
-@WebServlet("/ListSignupUsersController")
-public class ListSignupUsersController extends HttpServlet{
+@WebServlet("/UpdateSignupUserPage")
+public class UpdateSignupUserPage extends HttpServlet{
 
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		int userId =Integer.parseInt( request.getParameter("userid"));
 		
-		SignupDao signupDao = new SignupDao();
-		ArrayList<SignupBean> signup= signupDao.ListSignupUsers();
+		System.out.println("UserId"+userId);
 		
-		request.setAttribute("signup", signup);
+		SignupBean signupBean = new SignupBean();
+		SignupDao signDao = new SignupDao();
 		
-		RequestDispatcher rd = request.getRequestDispatcher("ListSignupUser.jsp");
+		signupBean = signDao.getSignupUserById(userId);
+		
+		request.setAttribute("signupBean", signupBean);
+		
+		RequestDispatcher rd = request.getRequestDispatcher("UpdateSignupUser.jsp");
 		rd.forward(request, response);
 	}
 }

@@ -1,4 +1,4 @@
-package ism.controller;
+package ism.controller.products;
 
 import java.io.IOException;
 
@@ -20,12 +20,14 @@ public class AddProduct extends HttpServlet{
 		String productDiscription = request.getParameter("productDiscription");
 		int productPrice =Integer.parseInt( request.getParameter("productPrice"));
 		int productQty =Integer.parseInt(request.getParameter("productQty"));
+		String productImg=request.getParameter("productImg");
 		
 		ProductBean productBean = new ProductBean();
 		productBean.setProductName(productName);
 		productBean.setProductDiscription(productDiscription);
 		productBean.setProductPrice(productPrice);
 		productBean.setProductQty(productQty);
+		productBean.setProductImg(productImg);
 		
 		ProductDao productDao = new ProductDao();
 		productDao.insertProduct(productBean);
