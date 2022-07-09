@@ -86,7 +86,7 @@ public class SignupController extends HttpServlet{
 			signupBean.setUserType("customer");
 			
 			signupDao.insertUsers(signupBean);
-			rd = request.getRequestDispatcher("view_signup.jsp");
+			rd = request.getRequestDispatcher("Login.jsp");
 		}
 		
 		rd.forward(request, response);

@@ -18,7 +18,7 @@
 		background-color: #EBF4FA;
 	}
 </style>
-<jsp:include page="Css.jsp"></jsp:include>
+
 </head>
 <body>
 	<jsp:include page="AdminNavbar.jsp"></jsp:include>

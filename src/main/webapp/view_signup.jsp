@@ -23,4 +23,5 @@
 	
 	<a href="ListSignupUsersController">ListSignupUser</a>
 </body>
+<jsp:include page="Js.jsp"></jsp:include>
 </html>

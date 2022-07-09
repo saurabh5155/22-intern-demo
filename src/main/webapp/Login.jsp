@@ -56,5 +56,6 @@
 		</div>
 	</div>
 </div>
+<jsp:include page="Js.jsp"></jsp:include>
 </body>
 </html>

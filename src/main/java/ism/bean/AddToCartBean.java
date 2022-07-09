@@ -2,9 +2,10 @@ package ism.bean;
 
 public class AddToCartBean {
 	
-	int cartId;
-	int productId;
-	int userId;
+	private int cartId;
+	private int productId;
+	private int userId;
+	
 	public int getCartId() {
 		return cartId;
 	}

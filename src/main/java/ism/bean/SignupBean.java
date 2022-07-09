@@ -2,13 +2,13 @@ package ism.bean;
 
 public class SignupBean {
 	
-	String firstName;
-	String LastName;
-	String email;
-	String gender;
-	String password;
-	int userId;
-	String userType;
+	private	String firstName;
+	private String LastName;
+	private String email;
+	private String gender;
+	private String password;
+	private int userId;
+	private String userType;
 	public String getUserType() {
 		return userType;
 	}

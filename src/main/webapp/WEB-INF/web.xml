@@ -59,4 +59,54 @@
     <servlet-name>DeleteAddToCart</servlet-name>
     <url-pattern>/DeleteAddToCart</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CheckOutControl</display-name>
+    <servlet-name>CheckOutControl</servlet-name>
+    <servlet-class>ism.controller.chackOut.CheckOutControl</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CheckOutControl</servlet-name>
+    <url-pattern>/CheckOutControl</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>OrderDetailDao</display-name>
+    <servlet-name>OrderDetailDao</servlet-name>
+    <servlet-class>ism.dao.OrderDetailDao</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>OrderDetailDao</servlet-name>
+    <url-pattern>/OrderDetailDao</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ListOrderController</display-name>
+    <servlet-name>ListOrderController</servlet-name>
+    <servlet-class>ism.controller.chackOut.ListOrderController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ListOrderController</servlet-name>
+    <url-pattern>/ListOrderController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DeleteOrder</display-name>
+    <servlet-name>DeleteOrder</servlet-name>
+    <servlet-class>ism.controller.chackOut.DeleteOrder</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteOrder</servlet-name>
+    <url-pattern>/DeleteOrder</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ListOrderDetails</display-name>
+    <servlet-name>ListOrderDetails</servlet-name>
+    <servlet-class>ism.controller.chackOut.ListOrderDetails</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ListOrderDetails</servlet-name>
+    <url-pattern>/ListOrderDetails</url-pattern>
+  </servlet-mapping>
 </web-app>
