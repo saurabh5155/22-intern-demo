@@ -109,4 +109,14 @@
     <servlet-name>ListOrderDetails</servlet-name>
     <url-pattern>/ListOrderDetails</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>errorController</display-name>
+    <servlet-name>errorController</servlet-name>
+    <servlet-class>ism.controller.errorController.errorController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>errorController</servlet-name>
+    <url-pattern>/errorController</url-pattern>
+  </servlet-mapping>
 </web-app>
