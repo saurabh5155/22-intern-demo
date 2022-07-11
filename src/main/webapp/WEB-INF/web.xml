@@ -119,7 +119,7 @@
     <servlet-name>errorController</servlet-name>
     <url-pattern>/errorController</url-pattern>
   </servlet-mapping>
-  
+  <!--start filter -->
   <filter>
   	<filter-name>SignupFilter</filter-name>
   	<filter-class>ism.filter.SignupFilter</filter-class>
@@ -130,4 +130,14 @@
   	<url-pattern>/SignupController</url-pattern>
   	<!-- <servlet-name>SignupController</servlet-name> -->
   </filter-mapping>
+  <!--end filter  -->
+  
+  <!-- start error  -->
+  
+  <error-page>
+  	<error-code>404</error-code>
+  	<location>/404ErrorPage.jsp</location>
+  </error-page>
+  
+  <!-- end error -->
 </web-app>
