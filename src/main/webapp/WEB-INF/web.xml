@@ -119,4 +119,15 @@
     <servlet-name>errorController</servlet-name>
     <url-pattern>/errorController</url-pattern>
   </servlet-mapping>
+  
+  <filter>
+  	<filter-name>SignupFilter</filter-name>
+  	<filter-class>ism.filter.SignupFilter</filter-class>
+  </filter>
+  
+  <filter-mapping>
+  	<filter-name>SignupFilter</filter-name>
+  	<url-pattern>/SignupController</url-pattern>
+  	<!-- <servlet-name>SignupController</servlet-name> -->
+  </filter-mapping>
 </web-app>

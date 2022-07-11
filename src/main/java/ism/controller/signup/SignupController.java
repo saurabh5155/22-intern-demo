@@ -30,52 +30,9 @@ public class SignupController extends HttpServlet{
 		System.out.println("email"+emailValue);
 		System.out.println("password"+passwordValue);
 		System.out.println("gender"+genderValue);
-
-		
-		boolean isError=false;
-		RequestDispatcher rd=null;
-		
-			if(firstNameValue==null || firstNameValue.trim().length()==0) {
-				request.setAttribute("firstNameError", "Please Enter Firstname");
-				isError=true;
-			}else {			
-				request.setAttribute("firstNameValue", firstNameValue);
-			}
-			
-			if(lastNameValue == null || lastNameValue.trim().length()==0) {
-				request.setAttribute("lastNameError", "Please enter lastname");
-				isError=true;
-			}else {
-				request.setAttribute("lastNameValue", lastNameValue);	
-			}
-			
-			if(emailValue==null||emailValue.trim().length()==0) {
-				request.setAttribute("emailError", "Please enter email");
-				isError=true;
-			}else {
-				request.setAttribute("emailValue", emailValue);
-			}
-			
-			if(genderValue==null||genderValue.trim().length()==0) {
-				request.setAttribute("genderError", "Please enter gender");
-				isError=true;
-			}else {
-				request.setAttribute("genderValue", genderValue);
-			}
-			
-			if(passwordValue == null|| passwordValue.trim().length()==0) {
-				request.setAttribute("passwordError", "Please enter password");
-				isError=true;
-			}else {
-				request.setAttribute("passwordValue", passwordValue);
-			}
 			
 		SignupDao signupDao = new SignupDao();
 		SignupBean signupBean = new SignupBean();
-		
-		if(isError==true) {
-			rd = request.getRequestDispatcher("index.jsp");
-		}else {
 //			signupDao.insertUsers(firstNameValue,lastNameValue,emailValue,genderValue,passwordValue);
 			
 			signupBean.setFirstName(firstNameValue);
@@ -86,10 +43,7 @@ public class SignupController extends HttpServlet{
 			signupBean.setUserType("customer");
 			
 			signupDao.insertUsers(signupBean);
-			rd = request.getRequestDispatcher("Login.jsp");
-		}
-		
-		rd.forward(request, response);
+			request.getRequestDispatcher("Login.jsp").forward(request, response);
 		
 	}
 }

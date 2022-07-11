@@ -12,8 +12,8 @@
 		int b=0;
 		int c=a/b;
 	%>
-	<form action="errorController">
+	<!-- <form action="errorController">
 		<input type="submit" value="submit">
-	</form>
+	</form> -->
 </body>
 </html>
